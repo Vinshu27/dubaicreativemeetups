@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dubai Creative Meetups — Slow down. Get creative. Connect.</title>
+<meta name="description" content="A community for anyone in Dubai looking to slow down, get creative, and connect. Paint & sip, mandala art, book & coffee circles, art jams and cozy socials across DIFC, Downtown & beyond. Beginners welcome!">
+<meta property="og:title" content="Dubai Creative Meetups ✨">
+<meta property="og:description" content="Paint, sip, color, chat — or just be. Curated creative events across cozy spots in DIFC, Downtown & beyond. Open to all — beginners welcome!">
+<meta property="og:image" content="https://dubaicreativemeetups.com/images/ig-07.jpg">
+<meta property="og:url" content="https://dubaicreativemeetups.com">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF6EE;
+    --paper:#FFFDF8;
+    --ink:#2B2118;
+    --terracotta:#D96C47;
+    --terracotta-deep:#C05635;
+    --sage:#7C9070;
+    --mustard:#E9B44C;
+    --blush:#F2C7C0;
+    --pink:#E88BA5;
+    --shadow:0 14px 40px rgba(43,33,24,.12);
+    --radius:22px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Karla',sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.65;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces',serif}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding-left:24px;padding-right:24px}
+
+  /* ---------- nav ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,246,238,.88);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(43,33,24,.08);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:1.15rem;text-decoration:none;display:flex;align-items:center;gap:8px}
+  .logo .dot{width:12px;height:12px;border-radius:50%;background:var(--terracotta);display:inline-block}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{text-decoration:none;font-weight:500;font-size:.95rem;opacity:.85;transition:opacity .2s}
+  .nav-links a:hover{opacity:1}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--terracotta);color:#fff;
+    padding:12px 22px;border-radius:999px;
+    text-decoration:none;font-weight:700;font-size:.95rem;
+    border:none;cursor:pointer;
+    transition:transform .15s, background .2s;
+  }
+  .btn:hover{background:var(--terracotta-deep);transform:translateY(-2px)}
+  .btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:var(--cream)}
+  .btn.whatsapp{background:#25D366}
+  .btn.whatsapp:hover{background:#1eb956}
+
+  /* ---------- hero ---------- */
+  header{position:relative;padding:72px 0 40px}
+  .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+  .kicker{
+    display:inline-block;background:var(--mustard);color:var(--ink);
+    font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;
+    padding:7px 16px;border-radius:999px;margin-bottom:22px;
+    transform:rotate(-1.5deg);
+  }
+  h1{font-size:clamp(2.6rem,5.4vw,4.2rem);line-height:1.06;font-weight:700;letter-spacing:-.01em}
+  h1 em{font-style:italic;color:var(--terracotta);position:relative;white-space:nowrap}
+  h1 em svg{position:absolute;left:0;bottom:-10px;width:100%;height:14px}
+  .hero p.lead{margin:24px 0 30px;font-size:1.15rem;max-width:34rem;opacity:.9}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-meta{margin-top:30px;display:flex;gap:22px;flex-wrap:wrap;font-size:.92rem;font-weight:500;opacity:.8}
+  .hero-meta span{display:flex;align-items:center;gap:7px}
+
+  /* polaroid collage */
+  .collage{position:relative;height:520px}
+  .polaroid{
+    position:absolute;background:#fff;padding:12px 12px 40px;
+    box-shadow:var(--shadow);border-radius:6px;
+    transition:transform .3s;
+  }
+  .polaroid:hover{transform:scale(1.04) rotate(0deg)!important;z-index:5}
+  .polaroid img{border-radius:3px;object-fit:cover}
+  .polaroid .cap{font-family:'Fraunces',serif;font-style:italic;text-align:center;margin-top:10px;font-size:.9rem;opacity:.75}
+  .p1{width:62%;top:0;left:0;transform:rotate(-4deg);z-index:2}
+  .p1 img{height:300px;width:100%}
+  .p2{width:52%;top:150px;right:0;transform:rotate(3.5deg);z-index:3}
+  .p2 img{height:250px;width:100%}
+  .p3{width:44%;bottom:0;left:8%;transform:rotate(-2deg);z-index:1}
+  .p3 img{height:180px;width:100%}
+  .blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;z-index:-1}
+  .blob.b1{width:340px;height:340px;background:var(--blush);top:-60px;right:-80px}
+  .blob.b2{width:280px;height:280px;background:var(--mustard);bottom:-40px;left:-100px;opacity:.35}
+
+  /* ---------- marquee ---------- */
+  .marquee{
+    background:var(--ink);color:var(--cream);
+    padding:16px 0;overflow:hidden;white-space:nowrap;
+    transform:rotate(-1deg);margin:56px -20px 0;
+  }
+  .marquee-track{display:inline-block;animation:scroll 28s linear infinite}
+  .marquee span{font-family:'Fraunces',serif;font-style:italic;font-size:1.15rem;margin:0 26px}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ---------- sections ---------- */
+  section{padding:88px 0}
+  .section-head{max-width:640px;margin-bottom:52px}
+  .section-head .kicker{transform:rotate(1deg)}
+  h2{font-size:clamp(1.9rem,3.6vw,2.8rem);line-height:1.15;margin-bottom:14px}
+  .section-head p{font-size:1.08rem;opacity:.85}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .about-grid .photo{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transform:rotate(1.2deg)}
+  .about-grid .photo img{height:440px;width:100%;object-fit:cover}
+  .about-copy p{margin-bottom:18px;font-size:1.06rem}
+  .about-copy .big{font-family:'Fraunces',serif;font-size:1.45rem;line-height:1.4;font-style:italic;color:var(--terracotta-deep)}
+  .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .pill{background:#fff;border:1.5px solid rgba(43,33,24,.14);padding:8px 16px;border-radius:999px;font-size:.9rem;font-weight:700}
+
+  /* experiences */
+  #experiences{background:var(--paper);border-top:1px solid rgba(43,33,24,.07);border-bottom:1px solid rgba(43,33,24,.07)}
+  .exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .exp{
+    background:var(--cream);border-radius:var(--radius);padding:30px 26px;
+    border:1.5px solid rgba(43,33,24,.09);
+    transition:transform .2s, box-shadow .2s;
+    position:relative;overflow:hidden;
+  }
+  .exp:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .exp .icon{
+    width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;
+    font-size:1.7rem;margin-bottom:18px;
+  }
+  .exp h3{font-size:1.25rem;margin-bottom:8px}
+  .exp p{font-size:.96rem;opacity:.85}
+  .exp .tag{position:absolute;top:20px;right:20px;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--mustard);padding:4px 10px;border-radius:999px}
+
+  /* why */
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+  .why{padding:28px 18px}
+  .why .emoji{font-size:2.4rem;margin-bottom:12px}
+  .why h3{font-size:1.1rem;margin-bottom:6px}
+  .why p{font-size:.92rem;opacity:.8}
+
+  /* gallery */
+  #gallery{background:var(--ink);color:var(--cream)}
+  #gallery .section-head p{opacity:.75}
+  .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;gap:14px}
+  .gal-grid a{border-radius:14px;overflow:hidden;position:relative;display:block}
+  .gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+  .gal-grid a:hover img{transform:scale(1.06)}
+  .gal-grid .tall{grid-row:span 2}
+  .gal-grid .wide{grid-column:span 2}
+  .ig-cta{margin-top:34px;text-align:center}
+  .ig-cta .btn{background:var(--cream);color:var(--ink)}
+  .ig-cta .btn:hover{background:#fff}
+
+  /* locations */
+  .loc-strip{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:8px}
+  .loc{
+    background:#fff;border-radius:var(--radius);padding:26px 34px;text-align:center;
+    box-shadow:var(--shadow);min-width:200px;
+  }
+  .loc .serif{font-size:1.3rem;font-weight:600}
+  .loc p{font-size:.9rem;opacity:.75}
+
+  /* contact */
+  #contact .contact-card{
+    background:#fff;border-radius:28px;box-shadow:var(--shadow);
+    display:grid;grid-template-columns:1fr 1fr;overflow:hidden;
+  }
+  .contact-left{padding:48px;background:linear-gradient(160deg,var(--terracotta) 0%,var(--terracotta-deep) 100%);color:#fff}
+  .contact-left h2{color:#fff}
+  .contact-left p{opacity:.92;margin-bottom:26px}
+  .contact-left ul{list-style:none;display:flex;flex-direction:column;gap:14px;font-weight:500}
+  .contact-left li{display:flex;gap:12px;align-items:flex-start}
+  .contact-right{padding:48px}
+  .field{margin-bottom:18px}
+  .field label{display:block;font-weight:700;font-size:.9rem;margin-bottom:7px}
+  .field input,.field textarea,.field select{
+    width:100%;padding:13px 16px;border-radius:14px;
+    border:1.5px solid rgba(43,33,24,.18);background:var(--paper);
+    font-family:'Karla',sans-serif;font-size:1rem;color:var(--ink);
+  }
+  .field textarea{resize:vertical;min-height:110px}
+  .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--terracotta)}
+  .wa-note{font-size:.85rem;opacity:.7;margin-top:12px}
+
+  footer{background:var(--ink);color:var(--cream);padding:44px 0;margin-top:0}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
+  .foot .logo .dot{background:var(--mustard)}
+  .foot p{font-size:.88rem;opacity:.65}
+  .foot .socials{display:flex;gap:16px}
+  .foot .socials a{opacity:.8;text-decoration:none;font-weight:700}
+  .foot .socials a:hover{opacity:1}
+
+  /* floating whatsapp */
+  .wa-float{
+    position:fixed;right:22px;bottom:22px;z-index:60;
+    width:58px;height:58px;border-radius:50%;background:#25D366;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 30px rgba(37,211,102,.45);
+    transition:transform .15s;
+  }
+  .wa-float:hover{transform:scale(1.08)}
+  .wa-float svg{width:30px;height:30px;fill:#fff}
+
+  /* reveal on scroll — hidden state only applies once JS opts in via .anim,
+     so content is never invisible if scripts fail */
+  .anim .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .anim .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr}
+    .collage{height:440px;max-width:480px;margin:0 auto}
+    .about-grid{grid-template-columns:1fr}
+    .about-grid .photo img{height:340px}
+    .exp-grid{grid-template-columns:1fr 1fr}
+    .why-grid{grid-template-columns:1fr 1fr}
+    .gal-grid{grid-template-columns:1fr 1fr;grid-auto-rows:180px}
+    #contact .contact-card{grid-template-columns:1fr}
+    .nav-links a:not(.btn){display:none}
+  }
+  @media (max-width:560px){
+    .exp-grid{grid-template-columns:1fr}
+    section{padding:64px 0}
+    header{padding-top:48px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="#top"><span class="dot"></span>Dubai Creative Meetups</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experiences">Experiences</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+      <a class="btn whatsapp js-wa" href="#contact">Join a meetup</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap hero">
+    <div>
+      <span class="kicker">✨ Dubai's coziest creative community</span>
+      <h1>Slow down.<br>Get creative.<br><em>Connect.<svg viewBox="0 0 200 14" preserveAspectRatio="none"><path d="M3 10 Q 50 2 100 8 T 197 6" fill="none" stroke="#E9B44C" stroke-width="5" stroke-linecap="round"/></svg></em></h1>
+      <p class="lead">Paint, sip, color, chat — or just be. We host curated creative meetups across cozy spots in DIFC, Downtown &amp; beyond. No pressure, no experience needed — just good vibes, open minds and fun conversations.</p>
+      <div class="hero-ctas">
+        <a class="btn whatsapp js-wa" href="#contact">💬 Join the next meetup</a>
+        <a class="btn ghost" href="#experiences">Explore experiences</a>
+      </div>
+      <div class="hero-meta">
+        <span>📍 DIFC · Downtown · beyond</span>
+        <span>🎨 Beginners welcome</span>
+        <span>🫰 Meet, connect, create</span>
+      </div>
+    </div>
+    <div class="collage">
+      <div class="blob b1"></div>
+      <div class="blob b2"></div>
+      <div class="polaroid p1"><img src="images/ig-07.jpg" alt="The Dubai Creative Meetups community at a paint and sip event"><div class="cap">Sunday paint &amp; sip ☕️</div></div>
+      <div class="polaroid p2"><img src="images/ig-02.jpg" alt="Painting a mandala at a creative meetup"><div class="cap">mandala mornings 🌸</div></div>
+      <div class="polaroid p3"><img src="images/ig-10.jpg" alt="A finished hand-painted mandala"><div class="cap">made with love</div></div>
+    </div>
+  </div>
+  <div class="marquee"><div class="marquee-track">
+    <span>Paint 🎨</span><span>Sip ☕️</span><span>Color 🖍️</span><span>Chat 💬</span><span>Connect ✨</span><span>Create 🫰</span><span>Just be 🌿</span><span>Paint 🎨</span><span>Sip ☕️</span><span>Color 🖍️</span><span>Chat 💬</span><span>Connect ✨</span><span>Create 🫰</span><span>Just be 🌿</span>
+  </div></div>
+</header>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-copy reveal">
+      <span class="kicker">🌿 The circle</span>
+      <h2>A space to relax, express yourself &amp; meet lovely humans</h2>
+      <p class="big">Let's turn ordinary evenings into something a little more meaningful.</p>
+      <p>Dubai Creative Meetups is a community for anyone in Dubai looking to slow down, get creative, and connect. Whether you're into mandala painting, book-and-coffee discussions, art jams, or just chill social events — this is your space.</p>
+      <p>New to the city? Want to try something different? Come join the circle. Every session is small, warm and welcoming — you'll leave with something you made and people you actually talked to.</p>
+      <div class="pill-row">
+        <span class="pill">No experience needed</span>
+        <span class="pill">Solo-friendly</span>
+        <span class="pill">Open to all</span>
+        <span class="pill">Good vibes only</span>
+      </div>
+    </div>
+    <div class="photo reveal"><img src="images/ig-05.jpg" alt="A group of smiling attendees holding their artwork at a Dubai Creative Meetups event"></div>
+  </div>
+</section>
+
+<section id="experiences">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">🎨 What we do</span>
+      <h2>Pick your kind of evening</h2>
+      <p>From brushes to books to board-game banter — there's more than one way to get creative with us.</p>
+    </div>
+    <div class="exp-grid">
+      <div class="exp reveal">
+        <span class="tag">Fan favourite</span>
+        <div class="icon" style="background:var(--blush)">🍷</div>
+        <h3>Paint &amp; Sip</h3>
+        <p>Canvas, coffee (or something bubblier), and a relaxed guided session in the cutest settings. Walk in empty-handed, walk out with a masterpiece.</p>
+      </div>
+      <div class="exp reveal">
+        <div class="icon" style="background:var(--mustard)">🌸</div>
+        <h3>Mandala Art</h3>
+        <p>Slow, meditative dot-and-pattern painting. Deeply calming, endlessly satisfying — and gorgeous on your wall when you're done.</p>
+      </div>
+      <div class="exp reveal">
+        <div class="icon" style="background:var(--sage);color:#fff">📚</div>
+        <h3>Book &amp; Coffee Circles</h3>
+        <p>Cozy conversations over good coffee — books, ideas and stories with people who love to talk about more than the weather.</p>
+      </div>
+      <div class="exp reveal">
+        <div class="icon" style="background:var(--pink)">🖌️</div>
+        <h3>Art Jams</h3>
+        <p>Freestyle creative sessions — no theme, no rules. Bring your ideas, borrow our supplies, and see where the evening takes you.</p>
+      </div>
+      <div class="exp reveal">
+        <div class="icon" style="background:var(--terracotta);color:#fff">👜</div>
+        <h3>Craft &amp; DIY</h3>
+        <p>Tote-bag painting, wall art, seasonal makes — hands-on sessions where you create something you'll actually use.</p>
+      </div>
+      <div class="exp reveal">
+        <div class="icon" style="background:var(--ink);color:#fff">🎉</div>
+        <h3>Socials &amp; Private Events</h3>
+        <p>Themed get-togethers, Galentine's specials, and private gatherings for birthdays and teams. Your people + our setup = a lovely time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">💛 Why people keep coming back</span>
+      <h2>More than an event — a little ritual</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why reveal"><div class="emoji">🧘</div><h3>Zero pressure</h3><p>No experience needed, ever. It's about the process, not perfection.</p></div>
+      <div class="why reveal"><div class="emoji">🤗</div><h3>Come solo, leave with friends</h3><p>Most of us walked in alone the first time. That's the point.</p></div>
+      <div class="why reveal"><div class="emoji">🏙️</div><h3>Cozy venues</h3><p>Hand-picked cafés and spaces in DIFC, Downtown &amp; beyond.</p></div>
+      <div class="why reveal"><div class="emoji">✨</div><h3>Curated, not crowded</h3><p>Small groups, warm hosts, and evenings that feel meaningful.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker" style="background:var(--pink)">📸 The circle, live</span>
+      <h2>Moments from our meetups</h2>
+      <p>Real people, real paint on real fingers. Follow along on Instagram for the next one.</p>
+    </div>
+    <div class="gal-grid reveal">
+      <a href="https://www.instagram.com/dubaicreativemeetups/" target="_blank" rel="noopener" class="tall"><img src="images/ig-01.jpg" alt="Group photo with finished paintings" loading="lazy"></a>
+      <a href="https://www.instagram.com/dubaicreativemeetups/" target="_blank" rel="noopener" class="wide"><img src="images/ig-07.jpg" alt="The community gathered after a paint and sip session" loading="lazy"></a>
+      <a href="https://www.instagram.com/dubaicreativemeetups/" target="_blank" rel="noopener"><img src="images/ig-10.jpg" alt="A hand-painted mandala" loading="lazy"></a>
+      <a href="https://www.instagram.com/dubaicreativemeetups/" target="_blank" rel="noopener"><img src="images/ig-03.jpg" alt="An attendee sketching at a coffee and paint session" loading="lazy"></a>
+      <a href="https://www.instagram.com/dubaicreativemeetups/" target="_blank" rel="noopener" class="tall"><img src="images/ig-08.jpg" alt="Attendees showing their flower paintings" loading="lazy"></a>
+      <a href="https://www.instagram.com/dubaicreativemeetups/" target="_blank" rel="noopener"><img src="images/ig-09.jpg" alt="Painting together at Coffee and Paint" loading="lazy"></a>
+      <a href="https://www.instagram.com/dubaicreativemeetups/" target="_blank" rel="noopener"><img src="images/ig-02.jpg" alt="Painting a sunflower mandala" loading="lazy"></a>
+      <a href="https://www.instagram.com/dubaicreativemeetups/" target="_blank" rel="noopener" class="wide"><img src="images/ig-12.jpg" alt="Galentine's special meetup group photo" loading="lazy"></a>
+    </div>
+    <div class="ig-cta reveal">
+      <a class="btn" href="https://www.instagram.com/dubaicreativemeetups/" target="_blank" rel="noopener">Follow @dubaicreativemeetups →</a>
+    </div>
+  </div>
+</section>
+
+<section id="locations">
+  <div class="wrap">
+    <div class="section-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
+      <span class="kicker" style="background:var(--sage);color:#fff">📍 Where we gather</span>
+      <h2>Cozy corners of Dubai</h2>
+    </div>
+    <div class="loc-strip reveal">
+      <div class="loc"><div class="serif">DIFC</div><p>Sunday sessions &amp; coffee circles</p></div>
+      <div class="loc"><div class="serif">Downtown</div><p>Evening paint &amp; sips</p></div>
+      <div class="loc"><div class="serif">&amp; Beyond</div><p>Pop-ups across the city</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-card reveal">
+      <div class="contact-left">
+        <span class="kicker">💬 Say hi</span>
+        <h2>Join the circle</h2>
+        <p>Drop us a message on WhatsApp — we'll send you details of the next meetup, help you book a spot, or plan a private session for your group.</p>
+        <ul>
+          <li>🎟️ Reserve a spot at the next event</li>
+          <li>🎂 Plan a private or corporate session</li>
+          <li>❓ Ask us anything — we're friendly</li>
+        </ul>
+      </div>
+      <div class="contact-right">
+        <form id="waForm">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" type="text" placeholder="e.g. Sara" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="interest">I'm interested in…</label>
+            <select id="interest">
+              <option>Joining the next meetup</option>
+              <option>Paint &amp; Sip</option>
+              <option>Mandala Art</option>
+              <option>Book &amp; Coffee Circle</option>
+              <option>Art Jam</option>
+              <option>A private / corporate event</option>
+              <option>Just saying hi 👋</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="msg">Message (optional)</label>
+            <textarea id="msg" placeholder="Hi! I'd love to join your next event…"></textarea>
+          </div>
+          <button type="submit" class="btn whatsapp" style="width:100%;justify-content:center">
+            <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.7 6L4 29l8.2-1.6c1.2.6 2.5.9 3.8.9 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.2 0-2.4-.3-3.5-.9l-.6-.3-4.9 1 1-4.7-.4-.6c-1-1.6-1.5-3.4-1.5-5.3 0-5.5 4.4-9.9 9.9-9.9s9.9 4.4 9.9 9.9-4.4 9.8-9.9 9.8zm5.4-7.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.2-.6-.4z"/></svg>
+            Send on WhatsApp
+          </button>
+          <p class="wa-note">Opens WhatsApp with your message pre-filled — nothing is sent until you hit send there.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <a class="logo" href="#top" style="text-decoration:none"><span class="dot"></span>Dubai Creative Meetups</a>
+    <p>Meet, connect, create 🫰 · Events across DIFC, Downtown &amp; beyond</p>
+    <div class="socials">
+      <a href="https://www.instagram.com/dubaicreativemeetups/" target="_blank" rel="noopener">Instagram</a>
+      <a href="#contact" class="js-wa">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float js-wa" href="#contact" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.7 6L4 29l8.2-1.6c1.2.6 2.5.9 3.8.9 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.2 0-2.4-.3-3.5-.9l-.6-.3-4.9 1 1-4.7-.4-.6c-1-1.6-1.5-3.4-1.5-5.3 0-5.5 4.4-9.9 9.9-9.9s9.9 4.4 9.9 9.9-4.4 9.8-9.9 9.8zm5.4-7.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.2-.6-.4z"/></svg>
+</a>
+
+<script>
+  // ===== WhatsApp number — digits only, international format, no "+".
+  // e.g. "971501234567". Leave empty until the real number is provided;
+  // while empty, WhatsApp buttons fall back to Instagram DMs.
+  const WHATSAPP_NUMBER = "";
+
+  const IG_URL = "https://www.instagram.com/dubaicreativemeetups/";
+  const waSet = /^[0-9]{8,15}$/.test(WHATSAPP_NUMBER);
+
+  function waLink(text){
+    return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(text);
+  }
+  const defaultMsg = "Hi Dubai Creative Meetups! ✨ I'd love to join your next event.";
+
+  // Direct WhatsApp buttons (nav, hero, float, footer)
+  document.querySelectorAll(".js-wa").forEach(el => {
+    if (waSet){
+      el.href = waLink(defaultMsg);
+      el.target = "_blank";
+      el.rel = "noopener";
+    } // else: keep pointing at #contact (form falls back to Instagram)
+  });
+
+  // Contact form → prefilled WhatsApp chat
+  document.getElementById("waForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const interest = document.getElementById("interest").value;
+    const msg = document.getElementById("msg").value.trim();
+    let text = "Hi Dubai Creative Meetups! ✨";
+    if (name) text += " I'm " + name + ".";
+    text += " I'm interested in: " + interest + ".";
+    if (msg) text += "\n\n" + msg;
+    window.open(waSet ? waLink(text) : IG_URL, "_blank", "noopener");
+  });
+
+  // Scroll reveal (progressive enhancement: .anim gates the hidden state,
+  // and a fallback timer reveals anything the observer missed)
+  if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches){
+    document.documentElement.classList.add("anim");
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => { if (en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } });
+    }, {threshold:.12});
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+    setTimeout(() => document.querySelectorAll(".reveal:not(.in)").forEach(el => el.classList.add("in")), 3000);
+  }
+</script>
+</body>
+</html>
