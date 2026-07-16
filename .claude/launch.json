@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dcm-site",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "http-server", "/Users/vgupta/Desktop/dubaiCreativeMeetups", "-p", "5599", "-c-1"],
+      "port": 5599
+    }
+  ]
+}
